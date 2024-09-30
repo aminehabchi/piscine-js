@@ -9,12 +9,12 @@ is.obj=isobj
 is.fun=isfunc
 is.truthy=istruthy
 is.falsy=isfalsy
+
 function isInteger(s){
-    if (typeof(s)==Number){
-        return true
-    }
-    return false
+   
+    return Number.isInteger
 }
+
 function isNaN(s){
     if (typeof(s)==NaN){
         return true
