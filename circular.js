@@ -1,3 +1,3 @@
-circular={
+let circular={
     circular:circular,
 }
