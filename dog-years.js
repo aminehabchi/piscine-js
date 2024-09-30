@@ -18,5 +18,5 @@ function dogYears(planet, age) {
     let dogYears = humanYears * 7;
 
  
-    return dogYears.toFixed(2);
+    return +(dogYears).toFixed(2);
 }
