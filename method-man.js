@@ -8,7 +8,7 @@ function yell(s){
     return s.toUpperCase()
 }
 function whisper(s){
-    return "*"+toLowerCase()+"*"
+    return "*"+s.toLowerCase()+"*"
 }
 function capitalize(s){
     let ss=""
