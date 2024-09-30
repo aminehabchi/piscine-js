@@ -5,8 +5,12 @@ function isPositive(a){
     return false
 }
 function abs(a){
+    if (a==0){
+        return 0
+    }
     if (isPositive(a)){
         return a
     }
     return a*-1
 }
+console.log(abs(0))
