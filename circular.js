@@ -1,3 +1,4 @@
 var circular={
-    circular: this
+    circular: this,
 }
+circular.circular =circular
