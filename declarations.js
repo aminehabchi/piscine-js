@@ -1,4 +1,4 @@
-var escapeStr="\`\\/\"\'";
+const escapeStr="\`\\/\"\'";
 
 const arr =Object.freeze([4,'2']);
 
