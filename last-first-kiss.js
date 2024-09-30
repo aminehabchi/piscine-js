@@ -17,6 +17,6 @@ function kiss(s){
     if (s.length==1){
         return [s[0]];
     }
-    var arr=[s[0],s[s.length-1]]
+    var arr=[s[s.length-1],s[0]]
     return arr;
 }
