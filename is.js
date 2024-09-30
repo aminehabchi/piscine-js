@@ -1,14 +1,25 @@
-const is={
-    num:Number.isInteger,
-    nan:isNaN,
-    str:isString,
-    bool:isBool,
-    fun:isfunc,
-    truthy:istruthy,
-    obj:isobj,
-    arr:isarr,
-    def:isdef,
-    undef:isUndef,
+is.num=isInteger
+is.nan=isNaN
+is.str=isString
+is.bool=isBool
+is.undef=isUndef
+is.def=isdef
+is.arr=isarr
+is.obj=isobj
+is.fun=isfunc
+is.truthy=istruthy
+is.falsy=isfalsy
+function isInteger(s){
+    if (typeof(s)==Number){
+        return true
+    }
+    return false
+}
+function isNaN(s){
+    if (typeof(s)==NaN){
+        return true
+    }
+    return false
 }
 function isfalsy(s){
     if (typeof(s)=='falsy'){
