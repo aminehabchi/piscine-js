@@ -10,5 +10,6 @@ function dogYears(name,age){
         uranus:y*84.016846,
         neptune:y*164.79132,
     }
-    return planet[name].toFixed(2);
+    return Number(planet[name].toFixed(2));
 }
+//console.log(dogYears('earth', 1000000000))
