@@ -1,6 +1,6 @@
-var escapeStr="\`\\/\"\'"
+var escapeStr="\`\\/\"\'";
 
-const arr =[4,'2']
+const arr =[4,'2'];
 Object.freeze(arr)
 
 const obj={
@@ -23,7 +23,9 @@ const nested={
 
 Object.freeze(nested);
 
+Object.freeze(nested.obj);
+
 Object.freeze(nested.arr);
 
-Object.freeze(nested.obj);
+
 
