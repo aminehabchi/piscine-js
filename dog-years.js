@@ -10,5 +10,5 @@ function dogYears(name,age){
         uranus:y*84.016846,
         neptune:y*164.79132,
     }
-    return planet[name];
+    return planet[name].toFixed(2);
 }
