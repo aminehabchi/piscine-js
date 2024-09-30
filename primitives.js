@@ -1,4 +1,4 @@
-const str=String;
-const num=Number;
-const bool=Boolean;
+const str='';
+const num=0;
+const bool=false;
 const undef=undefined;
