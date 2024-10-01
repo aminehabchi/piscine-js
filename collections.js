@@ -11,7 +11,7 @@ const strToSet=(a) => new Set(a)
 
 const objToArr = (obj) => Object.values(obj);
 
-const objToMap=(a) => new Map(Object.entries(obj));
+const objToMap = (obj) => new Map(Object.entries(obj));
 
 
 
