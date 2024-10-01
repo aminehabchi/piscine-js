@@ -1,47 +1,71 @@
-// Your function definitions
-const arrToSet = (arr) => new Set(arr);
-const arrToStr = (arr) => arr.join('');
-const setToArr = (set) => Array.from(set);
-const setToStr = (set) => Array.from(set).join('');
-const strToArr = (str) => Array.from(str);
-const strToSet = (str) => new Set(Array.from(str));
-const mapToObj = (map) => {
-    const obj = {};
-    for (let [key, value] of map) {
-        obj[key] = value;
+function arrToSet(arr) {
+    return new Set(arr);
+}
+
+function arrToStr(arr) {
+    return arr.toString().replaceAll(",", "");
+}
+
+function setToArr(set) {
+    return Array.from(set);
+}
+
+function setToStr(set) {
+    let res = "";
+    set.forEach((value) => {
+        res += value;
+    });
+    return res;
+}
+
+function strToArr(str) {
+    return str.split("");
+}
+
+function strToSet(str) {
+    return new Set(str.split(""));
+}
+
+function mapToObj(map) {
+    return Object.fromEntries(map);
+}
+
+function objToMap(obj) {
+    return new Map(Object.entries(obj));
+}
+
+function objToArr(obj) {
+    return Object.values(obj);
+}
+
+function arrToObj(arr) {
+    return Object.assign({}, arr);
+}
+
+function strToObj(str) {
+    return Object.assign({}, str.split(""));
+}
+
+function superTypeOf(value) {
+    if (Array.isArray(value)) {
+        return "Array";
+    } else if (value instanceof Set) {
+        return "Set";
+    } else if (value instanceof Map) {
+        return "Map";
+    } else if (value === null) {
+        return "null";
+    } else if (typeof value === "object") {
+        return "Object";
+    } else if (typeof value === "string") {
+        return "String";
+    } else if (typeof value === "number") {
+        return "Number";
+    } else if (typeof value === "boolean") {
+        return "Boolean";
+    } else if (typeof value === "undefined") {
+        return "undefined";
+    } else if (typeof value === "function") {
+        return "Function";
     }
-    return obj;
-};
-const objToArr = (obj) => Object.values(obj);
-const objToMap = (obj) => new Map(Object.entries(obj));
-const arrToObj = (arr) => {
-    const obj = {};
-    arr.forEach((value, index) => {
-        obj[index] = value;
-    });
-    return obj;
-};
-const strToObj = (str) => {
-    const obj = {};
-    Array.from(str).forEach((char, index) => {
-        obj[index] = char;
-    });
-    return obj;
-};
-
-const superTypeOf = (value) => {
-    if (value === null) return 'null';
-    if (Array.isArray(value)) return 'Array';
-    return Object.prototype.toString.call(value).slice(8, -1);
-};
-
-// Example Test Function
-const testSuperTypeOf = ({ eq }) => {
-    eq(superTypeOf(new Map()), 'Map');
-};
-
-// Example of eq function for testing
-const eq = (a, b) => a === b;
-
-// Run the test
-testSuperTypeOf({ eq });
+}
