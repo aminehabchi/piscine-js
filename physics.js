@@ -1,15 +1,22 @@
 function getAcceleration(obj){
-    if (def(obj.f) && def(obj.m)){
-        return obj.f/obj.m
-    }
+   
+   if (nan(obj.f/obj.m)==false){
+    return obj.f/obj.m;
+   }
+    
 
-    if (def(obj.Δv) && def(obj.Δt)){
-        return obj.Δv/obj.Δt
-    }
+   if (nan(obj.Δv/obj.Δt)==false){
+    return obj.Δv/obj.Δt;
+   }
+    
 
-    if (def(obj.t) && def(obj.m)){
-        return obj.t/obj.d
-    }
+  
+   if (nan(2*obj.d/(obj.t*obj.t))==false){
+    return 2*obj.d/(obj.t*obj.t);
+   }
+
+    
     return "impossible"
 }
-const def = (a) => typeof a !== "undefined"
+const nan = (a) => Number.isNaN(a)
+//console.log(getAcceleration({ d: 10, t: 2, Δv: 100 }))
