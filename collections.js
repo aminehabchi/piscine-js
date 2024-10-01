@@ -9,7 +9,7 @@ const strToArr=(a) => a.split('')
 
 const strToSet=(a) => new Set(a)
 
-const objToArr=(obj) =>  Object.entries(obj);
+const objToArr = (obj) => Object.values(obj);
 
 const objToMap=(a) => new Map(Object.entries(obj));
 
