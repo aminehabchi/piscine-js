@@ -12,4 +12,4 @@ function getAcceleration(obj){
     }
     return "impossible"
 }
-def = (a) => typeof a !== "undefined"
+const def = (a) => typeof a !== "undefined"
