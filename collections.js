@@ -1,43 +1,39 @@
+const arrToSet = (arr) => new Set(arr);
 
+const arrToStr = (arr) => arr.join('');
 
-const arrToSet=(a) => new Set(a)
-const arrToStr=(a) => a.join('')
-const setToArr=(a) => [...a]
+const setToArr = (set) => Array.from(set);
 
-const setToStr=(a) => [...a].join('')
-const strToArr=(a) => a.split('')
+const setToStr = (set) => Array.from(set).join('');
 
-const strToSet=(a) => new Set(a)
+const strToArr = (str) => Array.from(str);
+
+const strToSet = (str) => new Set(Array.from(str));
+
+const mapToObj = (map) => {
+    const obj = {};
+    for (let [key, value] of map) {
+        obj[key] = value;
+    }
+    return obj;
+};
 
 const objToArr = (obj) => Object.values(obj);
 
 const objToMap = (obj) => new Map(Object.entries(obj));
 
-
-
-
-// Convert Array to Object
-function arrToObj(arr) {
-    let obj = {};
-    arr.forEach((item, index) => {
-        obj[index] = item;
+const arrToObj = (arr) => {
+    const obj = {};
+    arr.forEach((value, index) => {
+        obj[index] = value;
     });
     return obj;
-}
+};
 
-// Convert String to Object
-function strToObj(str) {
-    let obj = {};
-    str.split('').forEach((char, index) => {
+const strToObj = (str) => {
+    const obj = {};
+    Array.from(str).forEach((char, index) => {
         obj[index] = char;
     });
     return obj;
-}
-
-function mapToObj(map) {
-    let obj = {};
-    map.forEach((value, key) => {
-        obj[key] = value;
-    });
-    return obj;
-}
+};
