@@ -39,7 +39,18 @@ function divide(a,b){
     return n
 }
 function modulo(a,b){
+    let sign=false
+    if ((a<0 && b>0) || (a>0 && b<0)){
+        sign=true
+    }
+    a=Math.abs(a)
+    b=Math.abs(b)
+    
     a= a-multiply(divide(a,b),b)
-    return Math.abs(a)
+
+    if (sign==true){
+        return Number("-"+a)
+    }
+    return a
 }
- //console.log( modulo(20, 9))
+ //console.log( modulo(-123, 22))
