@@ -40,7 +40,7 @@ function divide(a,b){
 }
 function modulo(a,b){
     let sign=false
-    if ((a<0 && b>0) || (a>0 && b<0)){
+    if ((a<0)){
         sign=true
     }
     a=Math.abs(a)
@@ -53,4 +53,4 @@ function modulo(a,b){
     }
     return a
 }
- //console.log( modulo(-123, 22))
+ console.log( modulo(123, -22))
