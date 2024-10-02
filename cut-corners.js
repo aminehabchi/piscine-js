@@ -3,13 +3,13 @@ function ceil(n){
         return n
     }
     if (n<0){
-        return trunc(n)-1
+        return trunc(n)
     }
     return trunc(n)+1
 }
 function floor(n){
-    if ( Math.abs(modulo(n*10,10))>=5){
-        return ceil(n)
+    if ( Math.abs(modulo(n*10,10))==0){
+        return (n)
     }
     if (n<0){
         return trunc(n)-1
@@ -17,17 +17,27 @@ function floor(n){
     return trunc(n)
 }
 function round(n){
+    if (n<0){
+        if (Math.abs(modulo(n*10,10))>=5){
+            return floor(n)
+        }
+        return ceil(n)
+    }
     if (Math.abs(modulo(n*10,10))>=5){
         return ceil(n)
     }
     return floor(n)
+    
 }
 function trunc(n){
    return n>>0;
 }
-// console.log(ceil(-3.7))
 
-// console.log(round(3.7),round(-3.7),round(3.1),round(-3.1))
+// const nums = [3.7, -3.7, 3.1, -3.1]
+// console.log("roud",nums.map(round))
+// console.log("foor",nums.map(floor))
+// console.log("trunc",nums.map(trunc))
+// console.log("ciel",nums.map(ceil))
 
 function modulo(a,b){
     let sign=false
