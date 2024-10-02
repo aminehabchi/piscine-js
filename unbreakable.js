@@ -1,29 +1,41 @@
 function split(s,sub){
     const ar=[]
     let a=""
-    for (let i=0;i<=s.length-sub.length;i++){
-        let ss="";
-        let j=i;
-        while(ss.length<sub.length){
-            ss=ss+s[j];
-            j++;
-        }
-        // console.log(ss)
-        if (ss==sub){
+    while (s.length!=0){
+        if (s.length>=sub.length && keepFirst(s,sub.length)==sub){
             ar.push(a)
+            s=remove(s,sub.length)
             a=""
-           i=i+sub.length-1
-           if (i==s.length){
-            ar.push(a)
-           }
+            if (s==''){
+                ar.push(a)
+            }
+            
         }else{
-            a=a+s[i]
+            a=a+s[0]
+            s=remove(s,1)
         }
     }
     if (a!=""){
         ar.push(a)
     }
     return ar
+}
+function remove(s,k){
+    let ss=""
+    for (i=k;i<s.length;i++){
+        ss=ss+s[i]
+    }
+    return ss
+}
+function keepFirst(s,j){
+    if (j>s.length){
+        return ''
+    }
+    let ss=""
+    for (let i=0;i<j;i++){
+        ss=ss+s[i]
+    }
+    return ss
 }
 function join(s,sub){
     let ss=""
@@ -35,4 +47,3 @@ function join(s,sub){
     }
     return ss
 }
-//console.log(split('rrrr', 'rr'))
