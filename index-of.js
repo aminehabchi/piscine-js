@@ -14,7 +14,7 @@ function lastIndexOf(arr,v ,j){
         j=0
     }
     let index=-1;
-    for (let i=0;i<arr.length-j;i++){
+    for (let i=0;i<=j;i++){
         if (arr[i]==v){
             index=i;
         }
@@ -32,4 +32,4 @@ function includes(arr,v,j){
     }
     return false;
 }
-//console.log(lastIndexOf(['t', 0, 0, 't'], 't', 2))
+//console.log(lastIndexOf(['t', 0, 0, 't'], 't', 3))
