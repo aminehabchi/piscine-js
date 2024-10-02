@@ -30,7 +30,7 @@ function round(n){
     
 }
 function trunc(x) {
-    return x < 0 ? x - (x % 1) : x - (x % 1);
+    return divide(x*10,10);
   }
 // const nums = [3.7, -3.7, 3.1, -3.1]
 // console.log("roud",nums.map(round))
