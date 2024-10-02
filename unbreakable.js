@@ -1,44 +1,30 @@
-function split(s,sub){
-    if (s==sub){
-        return ['']
-    }
-    const arr=[]
-    let a=""
-    while (s.length!==0){
-        if (s.length>=sub.length && keepFirst(s,sub.length)==sub){
-            arr.push(a)
-            s=remove(s,sub.length)
-            a=""
-            if (s===''){
-                arr.push(a)
-            }
-            
-        }else{
-            a=a+s[0]
-            s=remove(s,1)
+function split(s, sub) {
+    if (s === ''){
+        return [''];
+    } 
+    if (sub === ''){
+       return [s];  
+    } 
+    
+    const arr = [];
+    let currentSegment = '';
+    let index = 0;
+
+    while (index < s.length) {
+        if (s.slice(index, index + sub.length) === sub) {
+            arr.push(currentSegment);
+            currentSegment = '';
+            index += sub.length; 
+        } else {
+            currentSegment += s[index]; 
+            index++;
         }
     }
-    if (a!==""){
-        arr.push(a)
+    
+    if (currentSegment) {
+        arr.push(currentSegment);
     }
-    return arr
-}
-function remove(s,k){
-    let ss=""
-    for (let i=k;i<s.length;i++){
-        ss=ss+s[i]
-    }
-    return ss
-}
-function keepFirst(s,j){
-    if (j>s.length){
-        return ''
-    }
-    let ss=""
-    for (let i=0;i<j;i++){
-        ss=ss+s[i]
-    }
-    return ss
+    return arr;
 }
 function join(s,sub){
     let ss="";
