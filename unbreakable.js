@@ -1,14 +1,19 @@
 function split(s,sub){
-    let ar=[]
+    const ar=[]
     let a=""
     for (let i=0;i<=s.length-sub.length;i++){
-        let ss=""
-        for (let j=i;j<sub.length+i;j++){
-            ss=ss+s[j]
+        let ss="";
+        let j=i;
+        while(ss.length<sub.length){
+            ss=ss+s[j];
+            j++;
         }
+        console.log(ss)
         if (ss==sub){
             ar.push(a)
             a=""
+           i=i+sub.length
+           a=a+s[i]
         }else{
             a=a+s[i]
         }
