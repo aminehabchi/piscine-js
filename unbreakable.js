@@ -8,12 +8,16 @@ function split(s,sub){
             ss=ss+s[j];
             j++;
         }
-        console.log(ss)
+        // console.log(ss)
         if (ss==sub){
             ar.push(a)
             a=""
            i=i+sub.length
-           a=a+s[i]
+           if (i==s.length){
+            ar.push(a)
+           }else{
+            a=a+s[i]
+           }
         }else{
             a=a+s[i]
         }
@@ -33,4 +37,4 @@ function join(s,sub){
     }
     return ss
 }
-//console.log(split('ggg - ddd - b', ' - '))
+//console.log(split('ee,ff,g,', ','))
