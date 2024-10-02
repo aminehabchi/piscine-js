@@ -16,6 +16,9 @@ function keepLast(s){
     return s.slice(-2)
 }
 function keepFirstLast(s){
+    if (s.length<=4){
+        return s
+    }
     return keepFirst(s)+keepLast(s)
 }
 // console.log(cutFirst("azerty"))
@@ -23,4 +26,4 @@ function keepFirstLast(s){
 // console.log(cutFirstLast("azerty"))
 // console.log(keepFirst("azerty"))
 // console.log(keepLast("azerty"))
-// console.log(keepFirstLast("azerty"))
+ //console.log(keepFirstLast("az"))
