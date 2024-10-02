@@ -29,11 +29,9 @@ function round(n){
     return floor(n)
     
 }
-function trunc(n){
-    
-   return divide(n*10,10);
-}
-
+function trunc(x) {
+    return x < 0 ? x - (x % 1) : x - (x % 1);
+  }
 // const nums = [3.7, -3.7, 3.1, -3.1]
 // console.log("roud",nums.map(round))
 //  console.log("foor",nums.map(floor))
