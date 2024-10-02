@@ -1,56 +1,50 @@
-function split(s,sub){
-    if (s==sub){
-        return ['']
+function split(s,b){
+    let ar =[]
+    if (b == null){
+        ar[ar.length]=s
+        return ar
     }
-    const arr=[]
-    let a=""
-    while (s.length!==0){
-        if (s.length>=sub.length && keepFirst(s,sub.length)==sub){
-            arr.push(a)
-            s=remove(s,sub.length)
-            a=""
-            if (s===''){
-                arr.push(a)
+    if (b ===''){
+        for (let i = 0 ; i < s.length; i++){
+            ar[ar.length]=s[i]
+        }
+        return ar
+    }
+    let str =""
+    for (let i = 0 ; i < s.length; i++){
+        if (s[i]===b[0] ){
+            let x = b[0]
+            for (let j = 1 ; j < b.length; j++){
+                x+= b[j]
+                i++
             }
-            
-        }else{
-            a=a+s[0]
-            s=remove(s,1)
+            if (x==b){
+                ar[ar.length] = str
+                str = ""
+            }
+            if (i ===s.length-1){
+                ar[ar.length] = str
+            }  
+            continue
         }
+        str += s[i]
     }
-    if (a!==""){
-        arr.push(a)
+    if (str !==""){
+        ar[ar.length] = str
     }
-    return arr
+    if (ar.length===0){
+        ar[ar.length] = s
+    }
+    return ar
 }
-//console.log(split('ee,ff,g,', ','))
-function remove(s,k){
-    if (k>=s.length){
-        return ''
-    }
-    let ss=""
-    for (let i=k;i<s.length;i++){
-        ss=ss+s[i]
-    }
-    return ss
-}
-function keepFirst(s,j){
-    if (j>s.length){
-        return ''
-    }
-    let ss=""
-    for (let i=0;i<j;i++){
-        ss=ss+s[i]
-    }
-    return ss
-}
-function join(s,sub){
-    let ss="";
-    for (let i=0;i<s.length;i++){
-        ss=ss+s[i];
-        if (i!==s.length-1){
-            ss=ss+sub;
+function join(arr,b){
+    let str = ""
+    for (let i = 0 ; i < arr.length; i++){
+        if (i ===arr.length-1){
+            str += arr[i]
+            break
         }
+        str += arr[i]+b
     }
-    return ss;
+    return str
 }
