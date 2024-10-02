@@ -6,8 +6,20 @@ function multiply(a,b){
     return n
 }
 function divide(a,b){
-    return a/b
+    let n=0
+    while (a>0){
+        n++
+        a-=b
+    }
+    return n
 }
 function modulo(a,b){
-    return a%b
+    while (a>0){
+
+        a-=b
+    }
+    if (a==0){
+        return 0
+    }
+    return a*-1
 }
