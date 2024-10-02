@@ -1,12 +1,15 @@
 function split(s,sub){
+    if (s==sub){
+        return ['']
+    }
     const arr=[]
     let a=""
-    while (s.length!=0){
+    while (s.length!==0){
         if (s.length>=sub.length && keepFirst(s,sub.length)==sub){
             arr.push(a)
             s=remove(s,sub.length)
             a=""
-            if (s==''){
+            if (s===''){
                 arr.push(a)
             }
             
@@ -15,12 +18,12 @@ function split(s,sub){
             s=remove(s,1)
         }
     }
-    if (a!=""){
+    if (a!==""){
         arr.push(a)
     }
     return arr
 }
-// console.log(split('a b c', ' '))
+console.log(split('**,g,', ','))
 function remove(s,k){
     let ss=""
     for (let i=k;i<s.length;i++){
@@ -39,12 +42,12 @@ function keepFirst(s,j){
     return ss
 }
 function join(s,sub){
-    let ss=""
+    let ss="";
     for (let i=0;i<s.length;i++){
-        ss=ss+s[i]
+        ss=ss+s[i];
         if (i!=s.length-1){
-            ss=ss+sub
+            ss=ss+sub;
         }
     }
-    return ss
+    return ss;
 }
