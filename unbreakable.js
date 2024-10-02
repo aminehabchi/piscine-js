@@ -16,13 +16,14 @@ function split(s,sub){
         }
     }
     if (a!=""){
-        ar.push(a)
+        arr.push(a)
     }
     return arr
 }
+// console.log(split('a b c', ' '))
 function remove(s,k){
     let ss=""
-    for (i=k;i<s.length;i++){
+    for (let i=k;i<s.length;i++){
         ss=ss+s[i]
     }
     return ss
