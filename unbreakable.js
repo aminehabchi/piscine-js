@@ -12,11 +12,9 @@ function split(s,sub){
         if (ss==sub){
             ar.push(a)
             a=""
-           i=i+sub.length
+           i=i+sub.length-1
            if (i==s.length){
             ar.push(a)
-           }else{
-            a=a+s[i]
            }
         }else{
             a=a+s[i]
@@ -37,4 +35,4 @@ function join(s,sub){
     }
     return ss
 }
-//console.log(split('ee,ff,g,', ','))
+//console.log(split('rrrr', 'rr'))
