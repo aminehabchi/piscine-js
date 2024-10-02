@@ -21,9 +21,3 @@ function keepFirstLast(s){
     }
     return keepFirst(s)+keepLast(s)
 }
-// console.log(cutFirst("azerty"))
-// console.log(cutLast("azerty"))
-// console.log(cutFirstLast("azerty"))
-// console.log(keepFirst("azerty"))
-// console.log(keepLast("azerty"))
- //console.log(keepFirstLast("az"))
