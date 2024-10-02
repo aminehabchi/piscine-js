@@ -52,7 +52,7 @@ function modulo(a,b){
     a= a-multiply(divide(a,b),b)
 
     if (sign==true){
-        return Number("-"+a)
+        return a*-1
     }
     return a
 }
@@ -74,7 +74,7 @@ function multiply(a,b){
         n=n+a
     }
     if (sign==true){
-        return Number("-"+n)
+        return n*-1
     }
     return n
 }
@@ -101,7 +101,7 @@ function divide(a,b){
         n--
     }
     if (sign==true){
-        return Number("-"+n)
+        return n*-1
     }
     return n
 }
