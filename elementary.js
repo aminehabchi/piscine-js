@@ -27,8 +27,11 @@ function divide(a,b){
     }
     let n=0
     while (a>0){
-        n++
         a-=b
+          n++   
+    }
+    if (a<0){
+        n--
     }
     if (sign==true){
         return Number("-"+n)
@@ -44,4 +47,4 @@ function modulo(a,b){
     }
     return Math.abs(a)
 }
-//console.log( divide(34, 78))
+// console.log( divide(30, -4))
