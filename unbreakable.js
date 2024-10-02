@@ -25,6 +25,9 @@ function split(s,sub){
 }
 //console.log(split('ee,ff,g,', ','))
 function remove(s,k){
+    if (k>=s.length){
+        return ''
+    }
     let ss=""
     for (let i=k;i<s.length;i++){
         ss=ss+s[i]
