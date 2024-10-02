@@ -4,10 +4,10 @@ function get(src, path) {
     
     for (const key of paths) {
       if (result === null || result === undefined || typeof result !== 'object') {
-        return undefined;
+            break
       }
       result = result[key];
     }
-    
     return result;
-}
+  }
+  
