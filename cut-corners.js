@@ -38,24 +38,27 @@ function trunc(x) {
 //  console.log("trunc",nums.map(trunc))
 //  console.log("ciel",nums.map(ceil))
 
-function modulo(a,b){
-    let sign=false
-    if (a<0){
-        sign=true
+function modulo(dividend, divisor) {
+    if (divisor === 0) {
+      throw new Error("Divisor cannot be zero");
     }
-    if (a<0){
-        a=a*-1
+  
+    let absDividend =dividend;
+    if (absDividend<0){
+        absDividend=absDividend*-1
     }
-    if (b<0){
-        b=b*-1
+    let absDivisor = divisor;
+    if (absDivisor<0){
+        absDivisor=absDivisor*-1
     }
-    a= a-multiply(divide(a,b),b)
-
-    if (sign==true){
-        return a*-1
+    // Repeatedly subtract the divisor from the dividend until it's smaller than the divisor
+    while (absDividend >= absDivisor) {
+      absDividend -= absDivisor;
     }
-    return a
-}
+  
+    // Return the correct sign of the result
+    return dividend < 0 ? -absDividend : absDividend;
+  }
 function multiply(a,b){
     let sign=false
     if ((a<0 && b>0) || (a>0 && b<0)){
