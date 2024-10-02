@@ -12,7 +12,6 @@ function slice(ar,x,y){
         if (x>ar.length){
             return [];
         }
-
         for (let i=x;i<ar.length;i++){
             a.push(ar[i])
         }
@@ -43,5 +42,3 @@ function slice(ar,x,y){
     }
     return a
 }
-//  const animals = "abcdef";
-//  console.log(slice(animals,2));
