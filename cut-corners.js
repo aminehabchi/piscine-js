@@ -1,5 +1,5 @@
 
-// const nums = [3.7, -3.7, 3.1, -3.1]
+// const nums = [0xfffffffff, -3.7, 3.1, -3.1]
 // console.log(nums.map(round))
 // console.log(nums.map(floor))
 // console.log(nums.map(trunc))
@@ -37,7 +37,6 @@ function round(n){
     }
     return trunc(n)
 }
-//console.log(get(-3.7))
 function trunc(a) {
     if (a>-1 && a<1){
         return 0
@@ -48,6 +47,9 @@ function trunc(a) {
     return a-get(a)
 }
 function get(a){
+    if (a >= 0xfffffffff) {
+        a=a-0xfffffffff
+    }
     if (a>-1 && a<1){
         return a
     }
