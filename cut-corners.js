@@ -43,9 +43,12 @@ function modulo(a,b){
     if (a<0){
         sign=true
     }
-    a=Math.abs(a)
-    b=Math.abs(b)
-    
+    if (a<0){
+        a=a*-1
+    }
+    if (b<0){
+        b=b*-1
+    }
     a= a-multiply(divide(a,b),b)
 
     if (sign==true){
@@ -58,8 +61,13 @@ function multiply(a,b){
     if ((a<0 && b>0) || (a>0 && b<0)){
         sign=true
     }
-        a=Math.abs(a)
-        b=Math.abs(b)
+    
+    if (a<0){
+        a=a*-1
+    }
+    if (b<0){
+        b=b*-1
+    }
     
     let n=0
     for (let i=0;i<b;i++){
@@ -75,8 +83,12 @@ function divide(a,b){
     if ((a<0 && b>0) || (a>0 && b<0)){
         sign=true
     }
-    a=Math.abs(a)
-    b=Math.abs(b)
+    if (a<0){
+        a=a*-1
+    }
+    if (b<0){
+        b=b*-1
+    }
     if (a<b){
         return 0;
     }
