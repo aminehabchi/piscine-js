@@ -1,21 +1,39 @@
 function multiply(a,b){
+    let sign=false
+    if ((a<0 && b>0) || (a>0 && b<0)){
+        sign=true
+    }
+        a=Math.abs(a)
+        b=Math.abs(b)
+    
     let n=0
     for (let i=0;i<b;i++){
         n=n+a
     }
+    if (sign==true){
+        return Number("-"+n)
+    }
     return n
 }
 function divide(a,b){
+    let sign=false
+    if ((a<0 && b>0) || (a>0 && b<0)){
+        sign=true
+    }
+    a=Math.abs(a)
+    b=Math.abs(b)
     let n=0
     while (a>0){
         n++
         a-=b
     }
+    if (sign==true){
+        return Number("-"+n)
+    }
     return n
 }
 function modulo(a,b){
     while (a>0){
-
         a-=b
     }
     if (a==0){
@@ -23,3 +41,4 @@ function modulo(a,b){
     }
     return Math.abs(a)
 }
+//console.log( divide(123, -22))
