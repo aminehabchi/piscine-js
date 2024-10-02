@@ -29,36 +29,58 @@ function round(n){
     return floor(n)
     
 }
+function findNearest(x) {
+    let num = 0;
+    if (x < 1 && x >= 0) return 0
+    if (x < 0 && x >= -1) return 0
+    for (let i = x; i > 1; i = i / 2) {
+        num += 1;
+    }
+    return num - 1
+}
 function trunc(x) {
-    return divide(x*10,10);
-  }
+    let i = 2 ** findNearest(x);
+    if (x >= 0) {
+        for (; i < x;) {
+            i++
+        }
+        if (i === x) return i
+        return i - 1
+    }
+    if (x < 0) {
+        i = 0
+        for (; i > x;) {
+            i--
+        }
+        if (x > -1) return -0
+        if (i === x) return i
+        return i + 1
+    }
+}
 // const nums = [3.7, -3.7, 3.1, -3.1]
 // console.log("roud",nums.map(round))
 //  console.log("foor",nums.map(floor))
 //  console.log("trunc",nums.map(trunc))
 //  console.log("ciel",nums.map(ceil))
 
-function modulo(dividend, divisor) {
-    if (divisor === 0) {
-      throw new Error("Divisor cannot be zero");
+function modulo(a,b){
+    let sign=false
+    if (a<0){
+        sign=true
     }
-  
-    let absDividend =dividend;
-    if (absDividend<0){
-        absDividend=absDividend*-1
+    if (a<0){
+        a=a*-1
     }
-    let absDivisor = divisor;
-    if (absDivisor<0){
-        absDivisor=absDivisor*-1
+    if (b<0){
+        b=b*-1
     }
-    // Repeatedly subtract the divisor from the dividend until it's smaller than the divisor
-    while (absDividend >= absDivisor) {
-      absDividend -= absDivisor;
+    a= a-multiply(divide(a,b),b)
+
+    if (sign==true){
+        return a*-1
     }
-  
-    // Return the correct sign of the result
-    return dividend < 0 ? -absDividend : absDividend;
-  }
+    return a
+}
 function multiply(a,b){
     let sign=false
     if ((a<0 && b>0) || (a>0 && b<0)){
