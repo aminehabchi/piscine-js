@@ -1,13 +1,13 @@
 function split(s,sub){
-    const ar=[]
+    const arr=[]
     let a=""
     while (s.length!=0){
         if (s.length>=sub.length && keepFirst(s,sub.length)==sub){
-            ar.push(a)
+            arr.push(a)
             s=remove(s,sub.length)
             a=""
             if (s==''){
-                ar.push(a)
+                arr.push(a)
             }
             
         }else{
@@ -18,7 +18,7 @@ function split(s,sub){
     if (a!=""){
         ar.push(a)
     }
-    return ar
+    return arr
 }
 function remove(s,k){
     let ss=""
