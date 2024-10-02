@@ -1,8 +1,12 @@
 function split(s,sub){
     let ar=[]
     let a=""
-    for (let i=0;i<s.length;i++){
-        if (s[i]==sub){
+    for (let i=0;i<=s.length-sub.length;i++){
+        let ss=""
+        for (let j=i;j<sub.length+i;j++){
+            ss=ss+s[j]
+        }
+        if (ss==sub){
             ar.push(a)
             a=""
         }else{
@@ -24,3 +28,4 @@ function join(s,sub){
     }
     return ss
 }
+//console.log(split('ggg - ddd - b', ' - '))
