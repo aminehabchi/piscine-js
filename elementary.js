@@ -28,7 +28,7 @@ function divide(a,b){
     let n=0
     while (a>0){
         a-=b
-          n++   
+        n++   
     }
     if (a<0){
         n--
@@ -40,7 +40,7 @@ function divide(a,b){
 }
 function modulo(a,b){
     let sign=false
-    if ((a<0)){
+    if (a<0){
         sign=true
     }
     a=Math.abs(a)
