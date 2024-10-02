@@ -39,12 +39,7 @@ function divide(a,b){
     return n
 }
 function modulo(a,b){
-    while (a>0){
-        a-=b
-    }
-    if (a==0){
-        return 0
-    }
+    a= a-multiply(divide(a,b),b)
     return Math.abs(a)
 }
-// console.log( divide(30, -4))
+ //console.log( modulo(20, 9))
