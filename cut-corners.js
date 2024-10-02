@@ -30,14 +30,15 @@ function round(n){
     
 }
 function trunc(n){
-   return n>>0;
+    
+   return divide(n*10,10);
 }
 
 // const nums = [3.7, -3.7, 3.1, -3.1]
 // console.log("roud",nums.map(round))
-// console.log("foor",nums.map(floor))
-// console.log("trunc",nums.map(trunc))
-// console.log("ciel",nums.map(ceil))
+//  console.log("foor",nums.map(floor))
+//  console.log("trunc",nums.map(trunc))
+//  console.log("ciel",nums.map(ceil))
 
 function modulo(a,b){
     let sign=false
