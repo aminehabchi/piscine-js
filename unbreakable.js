@@ -23,7 +23,6 @@ function split(s,sub){
     }
     return arr
 }
-console.log(split('**,g,', ','))
 function remove(s,k){
     let ss=""
     for (let i=k;i<s.length;i++){
@@ -45,7 +44,7 @@ function join(s,sub){
     let ss="";
     for (let i=0;i<s.length;i++){
         ss=ss+s[i];
-        if (i!=s.length-1){
+        if (i!==s.length-1){
             ss=ss+sub;
         }
     }
