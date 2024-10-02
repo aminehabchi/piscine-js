@@ -16,7 +16,9 @@ function slice(ar,x,y){
         for (let i=x;i<ar.length;i++){
             a.push(ar[i])
         }
-        
+        if (typeof(ar)==='string'){
+            return a.join('')
+        }
         return a
     }else{
         if (x<0){
@@ -36,7 +38,10 @@ function slice(ar,x,y){
             a.push(ar[i])
         }
     }
+    if (typeof(ar)==='string'){
+        return a.join('')
+    }
     return a
 }
-// const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
-// console.log(slice(animals,-1,-5));
+//  const animals = "abcdef";
+//  console.log(slice(animals,2));
