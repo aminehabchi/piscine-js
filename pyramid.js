@@ -6,7 +6,6 @@ function pyramid(s,n){
             for (let k=0;k<s.length;k++){
                  o=o+" "
             }
-
         }
         for (let j=0;j<k;j++){
             o=o+s
