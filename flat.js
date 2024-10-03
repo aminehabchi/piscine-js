@@ -16,7 +16,3 @@ function flat(arr, j = 1) {
     }
     return myarr
 }
-
-// const b = [1, , 3, ["a", , ["d", , "e"]]];
-// console.log(flat(b)); // [ 1, 3, "a", ["d", empty, "e"] ]
-// console.log(flat(b, 2)); // [ 1, 3, "a", "d", "e"]
