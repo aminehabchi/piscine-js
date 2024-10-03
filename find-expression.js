@@ -14,7 +14,7 @@ function findExpression(num,n=1,s="1"){
     if (a!='undefined'){
         return a
     }
-    return 'undefined';
+    return undefined;
 }
 const add4 = '+4'
 const mul2 = '*2'
