@@ -1,14 +1,12 @@
 function get(src, path) {
-    const paths = path.split('.');
+    let p = path.split('.');
     let result = src;
-    
-    for (let i=0;i<paths.length;i++) {
-      if (typeof(result[paths[i]])!==undefined){
-        result=result[paths[i]]
+    for (let i=0;i<p.length;i++) {
+      if (result[p[i]]!==undefined){
+        result=result[p[i]]
       }else{
         return undefined
       }
     }
     return result;
   }
-  
