@@ -2,11 +2,12 @@ function get(src, path) {
     const paths = path.split('.');
     let result = src;
     
-    for (const key of paths) {
-      if (result === null || result === undefined || typeof result !== 'object') {
-            break
+    for (let i=0;i<paths.length;i++) {
+      if (typeof(result[paths[i]])!==undefined){
+        result=result[paths[i]]
+      }else{
+        return undefined
       }
-      result = result[key];
     }
     return result;
   }
