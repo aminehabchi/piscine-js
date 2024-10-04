@@ -1,4 +1,7 @@
 function sameAmount(s,r1,r2){
+    if (typeof(s)!='string'){
+        return false
+    }
     if (letterSpaceNumber(s,r1).length==letterSpaceNumber(s,r2).length){
         return true
     }
@@ -11,3 +14,5 @@ function letterSpaceNumber(s,myregex) {
     }
      return  m
  }
+//  const data=[]
+//  console.log(sameAmount(data, /q /, /qqqqqqq/))
