@@ -36,14 +36,19 @@ function capitalize(s) {
 }
 
 function fahrenheitToCelsius(arr) {
+    let m = new Map()
     for (let i = 0; i < arr.length; i++) {
         console.log((arr[i].slice(0, arr[i].length - 2) - 32))
-        arr[i] = Math.floor((arr[i].slice(0, arr[i].length - 2) * 5 - 32 * 5) / 9)
+       m.set(i,Math.floor((arr[i].slice(0, arr[i].length - 2) * 5 - 32 * 5) / 9))
+    }
+    let ar = []
+    for (let [_, v] of m) {
+        ar.push(v)
     }
     return arr
 }
 
-// console.log(fahrenheitToCelsius(['68°F', '59°F', '25°F'])) // -> ['20°C', '15°C', '-4°C']);
+//  console.log(fahrenheitToCelsius(['68°F', '59°F', '25°F'])) // -> ['20°C', '15°C', '-4°C']);
 
 function trimTemp(obj) {
     for (let i = 0; i < obj.length; i++) {
@@ -64,11 +69,15 @@ function trim(s) {
 }
 function tempForecasts(obj) {
     let arr = []
+    let m = new Map()
     for (let i = 0; i < obj.length; i++) {
         let t = trim(obj[i].temperature)
         t = Math.floor((t.slice(0, t.length - 2) * 5 - 32 * 5) / 9)
 
-        arr.push(t + '°Celsius in ' + obj[i].city + ', ' + obj[i].state)
+        m.set(i,t + '°Celsius in ' + obj[i].city + ', ' + obj[i].state)
+    }
+    for (let [_, v] of m) {
+        arr.push(v)
     }
     return arr
 }
