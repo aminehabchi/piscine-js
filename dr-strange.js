@@ -1,21 +1,26 @@
 function addWeek(date) {
-    let day = Number(date.getDate())%14;
-    let week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
+
+    let day = date.getDate()%31;
+   
+    let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    //console.log(day)
     if (day<7){
-        return week[day]
+        return days[day]
     }else{
-        return "second"+week[day-7]
+        return "second"+days[day-7]
     }
 }
-// console.log(addWeek(new Date('0001-03-01')))
+
+// console.log(addWeek(new Date('0001-01-01')))
 // console.log(addWeek(new Date('0001-01-02')))
 // console.log(addWeek(new Date('0001-01-07')))
 // console.log(addWeek(new Date('0001-01-08')))
 // console.log(addWeek(new Date('0001-01-09')))
 
-function timeTravel(obj){
-    obj.date.setHours(obj.hour);      
-    obj.date.setMinutes(obj.minute);      
+function timeTravel(obj) {
+    obj.date.setHours(obj.hour);
+    obj.date.setMinutes(obj.minute);
     obj.date.setSeconds(obj.second);
     return obj.date
 }
