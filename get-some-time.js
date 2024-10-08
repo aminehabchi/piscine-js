@@ -9,6 +9,9 @@ function firstDayWeek(n,s){
         n=n-m[j]
         j++
     }
+    if (n<0){
+        n*=-1
+    }
     j+=1
     if (j<10){
         j="0"+j
@@ -16,6 +19,7 @@ function firstDayWeek(n,s){
     if (n<10){
         n="0"+n
     }
+    //console.log(n,j)
     return n+"-"+j+"-"+s
 }
 function isLeapYear(year) {
@@ -25,4 +29,4 @@ function isLeapYear(year) {
       return false;
     }
   }
-//  console.log(firstDayWeek(52, '1000'))
+//   console.log(firstDayWeek(1, '1000'))
