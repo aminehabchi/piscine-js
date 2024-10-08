@@ -16,4 +16,4 @@ function firstDayWeek(n,s){
     return n+"-"+j+"-"+s
 }
 
-console.log(firstDayWeek(5,'2020'))
+// console.log(firstDayWeek(5,'2020'))
