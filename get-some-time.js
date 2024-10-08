@@ -13,7 +13,7 @@ function firstDayWeek(n,s){
     if (n<10){
         n="0"+n
     }
-    return n+":"+j+":"+s
+    return n+"-"+j+"-"+s
 }
 
 console.log(firstDayWeek(5,'2020'))
