@@ -1,18 +1,29 @@
 function addWeek(date) {
+    const weekdays = [
+        'Monday',    
+        'Tuesday',   
+        'Wednesday', 
+        'Thursday',  
+        'Friday',    
+        'Saturday',  
+        'Sunday',    
+        'secondMonday',   
+        'secondTuesday', 
+        'secondWednesday',
+        'secondThursday',  
+        'secondFriday',    
+        'secondSaturday',  
+        'secondSunday'     
+    ];
+    
+    const nw = new Date('0001-01-01')
+    const def = date-nw
 
-
-    let day = date.getDate()%31;
-   
-    const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-    //console.log(day)
-    if (day<7){
-        return days[day]
-    }else{
-        return "second"+days[day-7]
-    }
+    const day = Math.floor(def / (1000 * 60 * 60 * 24))
+    return weekdays[day%14];
 }
 
-//console.log(addWeek(new Date('0001-01-01')))
+// console.log(addWeek(new Date('0001-01-01')))
 // console.log(addWeek(new Date('0001-01-02')))
 // console.log(addWeek(new Date('0001-01-07')))
 // console.log(addWeek(new Date('0001-01-08')))
