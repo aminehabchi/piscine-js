@@ -17,18 +17,17 @@ function isLeapYear(date){
     }
     return false
 }
-// function isLastDayOfMonth(date){
-//     let d=new Date(date.getYear(),date.getMonth(),1)
-//     let def=d
-//     def=def/(1000*60*60*24)
-//     console.log(def)
-//     const m = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-//     if (isLeapYear(date)) {
-//         m[1] = 29;
-//     }
-//     if (m[date.getMonth()]==def){
-//         return true
-//     }
-//     return false
-// }
-// console.log(isFriday(new Date('2024-10-11')))
+function isLastDayOfMonth(date){
+    let def= date.getDate()
+   
+
+    const m = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    if (isLeapYear(date)) {
+        m[1] = 29;
+    }
+    if (m[date.getMonth()]==def){
+        return true
+    }
+    return false
+}
+// console.log(isLastDayOfMonth(new Date('2024-10-31')))
