@@ -3,7 +3,7 @@ function addWeek(date) {
 
     let day = date.getDate()%31;
    
-    let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     //console.log(day)
     if (day<7){
         return days[day]
@@ -12,7 +12,7 @@ function addWeek(date) {
     }
 }
 
-// console.log(addWeek(new Date('0001-01-01')))
+//console.log(addWeek(new Date('0001-01-01')))
 // console.log(addWeek(new Date('0001-01-02')))
 // console.log(addWeek(new Date('0001-01-07')))
 // console.log(addWeek(new Date('0001-01-08')))
