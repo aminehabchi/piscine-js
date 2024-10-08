@@ -10,7 +10,7 @@ function isAfter(d1,d2){
     if (!isValid(d1) || !isValid(d2)){
         return false
     }
-    if (d1-1<d2-1){
+    if (d1>d2){
         return true
     }
     return false
@@ -20,7 +20,7 @@ function isBefore(d1,d2){
     if (!isValid(d1) || !isValid(d2)){
         return false
     }
-    if (d1-1>d2-1){
+    if (d1<d2){
         return true
     }
     return false
