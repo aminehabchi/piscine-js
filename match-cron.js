@@ -9,7 +9,7 @@ function matchCron(s,date){
    if (s[2]!="*" && Number(s[2])!=date.getDate()){
     return false
    }
-   if (s[3]!="*" && Number(s[3])!=date.getMonth()){
+   if (s[3]!="*" && Number(s[3])!=date.getMonth()+1){
     return false
    }
    if (s[4]!="*" && Number(s[4])!=date.getDay()){
@@ -20,4 +20,4 @@ function matchCron(s,date){
 // console.log(matchCron('9 * * * *', new Date('2020-05-30 19:09:00')))
 // console.log(matchCron('9 * * * *', new Date('2020-05-30 19:09:00')))
 // console.log(matchCron('9 * * * *', new Date('2020-05-30 19:21:00')))
-// console.log(matchCron('* * * * 1', new Date('2020-06-01 00:00:00')))
+// console.log((matchCron('* * * 2 *', new Date('2021-02-01 00:00:00'))))
