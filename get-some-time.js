@@ -1,6 +1,9 @@
 function firstDayWeek(n,s){
-    n=n*7 -6
+    n=n*7 -8
     const m=[31,28,31,30,31,30,31,31,30,31,30,31]
+    // if (isLeapYear(s)){
+    //     m[1]=29
+    // }
     let j=0
     while (n>m[j]){
         n=n-m[j]
@@ -15,5 +18,11 @@ function firstDayWeek(n,s){
     }
     return n+"-"+j+"-"+s
 }
-
-// console.log(firstDayWeek(5,'2020'))
+function isLeapYear(year) {
+    if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+//  console.log(firstDayWeek(52, '1000'))
