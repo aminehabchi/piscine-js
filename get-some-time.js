@@ -1,19 +1,14 @@
-function firstDayWeek(weekNum, yearNum) {
-
-    let yearStart = new Date(yearNum, 0, 1);
-
-    let dayOfWeek = (yearStart.getDay() === 0 ? 6 : yearStart.getDay() - 1); 
-
-    yearStart.setDate(yearStart.getDate() - dayOfWeek);
-
-    let firstOfWeek = new Date(yearStart);
-    firstOfWeek.setDate(firstOfWeek.getDate() + 7 * (weekNum - 1));
-
-    if (firstOfWeek.getFullYear() < yearNum) {
-        return '01-01-' + yearNum;
+function firstDayWeek(week, year) {
+    let date = 1 + (week - 1) * 7;
+    let monday = new Date(year, 0, date);
+    
+    while (monday.getDay() !== 1) {
+        if (monday.getFullYear() === year - 1) return '01-01-' + year;
+        monday.setDate(monday.getDate() - 1);
     }
 
-    return firstOfWeek.getDate().toString().padStart(2, '0') + '-' +
-           (firstOfWeek.getMonth() + 1).toString().padStart(2, '0') + '-' +
-           firstOfWeek.getFullYear();
+    if (year.toString().slice(0, 2) === '00') monday.setDate(monday.getDate() + 1);
+
+    const padZero = (num) => (num < 10 ? '0' + num : num);
+    return `${padZero(monday.getDate())}-${padZero(monday.getMonth() + 1)}-${year.toString().slice(0, 2) === '00' ? '00' + monday.getFullYear().toString().slice(-2) : monday.getFullYear()}`;
 }
