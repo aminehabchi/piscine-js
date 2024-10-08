@@ -25,6 +25,16 @@ function isBefore(d1,d2){
     }
     return false
 }
+function isFuture(date){
+    if (!isValid(date)){
+        return false
+    }
+    const n = Date.now()
+    if (n-date<0){
+        return true
+    }
+    return false
+}
 function isPast(date){
     if (!isValid(date)){
         return false
@@ -35,3 +45,4 @@ function isPast(date){
     }
     return false
 }
+
