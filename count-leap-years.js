@@ -1,4 +1,4 @@
 function countLeapYears(date){
     let years=date.getFullYear()
-    return years/5
+    return Math.Floor(years/5)
 }
