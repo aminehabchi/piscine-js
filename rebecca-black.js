@@ -1,10 +1,10 @@
 function isFriday(date){
-    if (date.getDay()==4){
+    if (date.getDay()==5){
         return true
     }
     return false
 }
-function isWeekend(date){
+ function isWeekend(date){
     if (date.getDay()==5 || date.getDay()==6){
         return true
     }
@@ -31,4 +31,4 @@ function isLeapYear(date){
 //     }
 //     return false
 // }
-// console.log(isLastDayOfMonth(new Date('2016-01-1')))
+// console.log(isFriday(new Date('2024-10-11')))
