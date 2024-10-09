@@ -2,11 +2,7 @@ function map(arr,func){
     if (arr==null){
         return []
     }
-    let a=[]
-    for (let i=0;i<arr.length;i++){
-        a.push(func(arr[i]))
-    }
-    return a
+    return arr.map((a)=>func(a))
 }
 const flatMap = (arr,fn) => {
     return [].concat(...map(arr,fn))
