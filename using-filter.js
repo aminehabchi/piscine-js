@@ -49,7 +49,7 @@ function isValid(obj){
 }
 
 function filterShortStateName(arr){
-    return arr.filter((s)=>s.length<=7)
+    return arr.filter((s)=>s.length<7)
 }
 function filterStartVowel(arr){
     return arr.filter((s) => Vowels(s[0]))
