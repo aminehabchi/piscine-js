@@ -1,5 +1,5 @@
-function adder(arr){
-    return arr.reduce((s,n)=>s+n,0)
+function adder(arr,st=0){
+    return arr.reduce((s,n)=>s+n,st)
 }
 function sumOrMul(arr,sum){
     if (arr[0]%2==0){
@@ -19,3 +19,4 @@ function sumOrMul(arr,sum){
 function funcExec(arr){
     return 0
 }
+// console.log(adder([9, 24, 7, 11, 3]));
