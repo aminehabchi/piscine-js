@@ -27,9 +27,9 @@ function duplicate(s){
     return true
 }
 function isValid(obj){
-    if (obj==null){
-        return false
-    }
+    // if (obj==null){
+    //     return false
+    // }
     if (obj.capital.length<8){
         return false
     }
@@ -49,6 +49,7 @@ function isValid(obj){
     if (obj.region=="South"){
         return false
     }
+    return true
 }
 
 function filterShortStateName(arr){
