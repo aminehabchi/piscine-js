@@ -1,3 +1,12 @@
+function Vowels(s){
+    if (s=='a' || s=='e' || s=='i' || s=='o' || s=='u'){
+        return true
+    }
+    if (s=='A' || s=='E' || s=='I' || s=='O' || s=='U'){
+        return true
+    }
+    return false
+}
 function countV(s,k){
     let c=0
     s=s.split('')
@@ -27,25 +36,27 @@ function duplicate(s){
     return true
 }
 function isValid(obj){
-    // if (obj==null){
-    //     return false
-    // }
+
     if (obj.capital.length<8){
         return false
     }
-    if (Vowels(obj.name[0])==false ){
+   
+    let s=obj.name.split('')
+    if (Vowels(s[0]) ){
         return false
     }
-    let bl=false
-    for (let i=0;i<obj.tag;i++){
-        if (Vowels(obj.tag[i])){
+
+   let bl=false
+  
+    for (let i=0;i<obj.tag.length;i++){
+        if (!Vowels(obj.tag[i])){
             bl=true
         }
     }
     if (bl==false){
         return false
     }
-
+ 
     if (obj.region=="South"){
         return false
     }
@@ -62,15 +73,7 @@ function filterStartVowel(arr){
 function filter5Vowels(arr){
     return arr.filter((s)=>countV(s,5))
 }
-function Vowels(s){
-    if (s=='a' || s=='e' || s=='i' || s=='o' || s=='u'){
-        return true
-    }
-    if (s=='A' || s=='E' || s=='I' || s=='O' || s=='U'){
-        return true
-    }
-    return false
-}
+
 
 function filter1DistinctVowel(arr){
     return arr.filter((s)=> duplicate(s))
