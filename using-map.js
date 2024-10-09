@@ -1,62 +1,27 @@
-citiesOnly([
-    {
-        city: 'Los Angeles',
-        temperature: '  101 °F   ',
-    },
-    {
-        city: 'San Francisco',
-        temperature: ' 84 ° F   ',
-    },
-])
-
-function citiesOnly(citys) {
-    let m = new Map()
-    for (let i = 0; i < citys.length; i++) {
-        m.set(citys[i].city, true)
-    }
-    let arr = []
-    for (let [key, _] of m) {
-        arr.push(key)
-    }
-    return arr
-}
-function upperCasingStates(arr) {
-    let m = new Map()
-    for (let i = 0; i < arr.length; i++) {
-        m.set(arr[i], true)
-    }
-    let ar = []
-    for (let [key, _] of m) {
-        ar.push(capitalize(key))
-    }
-    return ar
-}
-function capitalize(s) {
-    return s[0].toUpperCase() + s.slice(1)
+function citiesOnly(ar) {
+    return ar.map((x) => x.city)
 }
 
-function fahrenheitToCelsius(arr) {
-    let m = new Map()
-    for (let i = 0; i < arr.length; i++) {
-        console.log((arr[i].slice(0, arr[i].length - 2) - 32))
-       m.set(i,Math.floor((arr[i].slice(0, arr[i].length - 2) * 5 - 32 * 5) / 9))
-    }
-    let ar = []
-    for (let [_, v] of m) {
-        ar.push(v)
-    }
-    return arr
+function upperCasingStates(ar) {
+    return ar.map((x) => capitalize(x))
+}
+function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-//  console.log(fahrenheitToCelsius(['68°F', '59°F', '25°F'])) // -> ['20°C', '15°C', '-4°C']);
+function fahrenheitToCelsius(ar) {
+    return ar.map((x) => convert(x.slice(0, x.length - 2)) + "°C")
+}
+function convert(f) {
+    return Math.floor((f - 32) * 5 / 9);
+}
 
 function trimTemp(obj) {
-    for (let i = 0; i < obj.length; i++) {
-        obj[i].temperature = trim(obj[i].temperature)
-    }
-    return obj
+    return obj.map((o) => {
+        o.temperature = trim(o.temperature)
+        return o
+    })
 }
-
 function trim(s) {
     let ss = ''
     s = s.split('')
@@ -67,66 +32,12 @@ function trim(s) {
     }
     return ss
 }
+
 function tempForecasts(obj) {
-    let arr = []
-    let m = new Map()
-    for (let i = 0; i < obj.length; i++) {
-        let t = trim(obj[i].temperature)
-        t = Math.floor((t.slice(0, t.length - 2) * 5 - 32 * 5) / 9)
-
-        m.set(i,t + '°Celsius in ' + obj[i].city + ', ' + obj[i].state)
-    }
-    for (let [_, v] of m) {
-        arr.push(v)
-    }
-    return arr
+    return obj.map((o) => {
+        let t=trim(o.temperature)
+        t=convert(t.slice(0,t.length-2))
+        return t+'°Celsius in '+capitalize(o.city)+', '+capitalize(o.state)
+    })
 }
-// console.log(tempForecasts([
-//     {
-//         city: 'Los Angeles',
-//         region: 'West',
-//         state: 'california', temperature: '101 °F'
-//     },
 
-//     {
-//         city: 'San Francisco',
-//         region: 'West',
-//         state: 'california',
-//         temperature: '84 °F'
-//     },
-//     {
-//         city: 'Miami',
-//         region: 'South',
-//         state: 'Florida',
-//         temperature: ' 112 °F'
-//     },
-//     {
-//         city: 'New York City',
-//         region: 'North East',
-//         state: 'new york',
-//         temperature: ' 0 °F'
-//     },
-//     {
-//         city: 'Juneau',
-//         region: 'West',
-//         state: 'Alaska',
-//         temperature: ' 21° F'
-//     },
-//     {
-//         city: 'Boston',
-//         region: 'North East',
-//         state: 'massachussetts',
-//         temperature: '45 °F'
-//     },
-//     {
-//         city: 'Jackson',
-//         region: 'South',
-//         state: 'mississippi',
-//         temperature: ' 70°F  '
-//     },
-//     {
-//         city: 'Utqiagvik',
-//         region: 'West',
-//         state: 'Alaska',
-//         temperature: ' -1 °F'
-//     }]));

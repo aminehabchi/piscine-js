@@ -7,7 +7,6 @@ function dayOfTheYear(date){
     d.setFullYear(y)
     d.setMonth(0)
     d.setDate(0)
-    console.log(d)
     let def=date-d
     return Math.abs(Math.floor(def/(1000*60*60*24)+1))
 }
