@@ -18,4 +18,4 @@ function sumOrMul(arr, sum) {
         return s
     })
 }
-const funcExec = (arr, i) => arr.reduce((a, c) => c(a), i??0)
+// const funcExec = (arr, i) => arr.reduce((a, c) => c(a), i??0)
