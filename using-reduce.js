@@ -18,7 +18,7 @@ function sumOrMul(arr, sum) {
         return s
     })
 }
-function funcExec(arr,st=0) {
-    return arr.reduce((s, n) => n(s), st)
+function funcExec(funcs,st=0) {
+    return funcs.reduce((s, func) => func(s), st)
 }
 // console.log(sumOrMul([29, 23, 3, 2, 25]));
