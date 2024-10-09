@@ -35,34 +35,6 @@ function duplicate(s){
     }
     return true
 }
-function isValid(obj){
-
-    if (obj.capital.length<8){
-        return false
-    }
-   
-    let s=obj.name.split('')
-    if (Vowels(s[0]) ){
-        return false
-    }
-
-   let bl=false
-  
-    for (let i=0;i<obj.tag.length;i++){
-        if (!Vowels(obj.tag[i])){
-            bl=true
-        }
-    }
-    if (bl==false){
-        return false
-    }
- 
-    if (obj.region=="South"){
-        return false
-    }
-    return true
-}
-
 function filterShortStateName(arr){
     return arr.filter((s)=>s.length<7)
 }
@@ -79,6 +51,14 @@ function filter1DistinctVowel(arr){
     return arr.filter((s)=> duplicate(s))
 }
 
-function multiFilter(arr){
-    return arr.filter((o)=>isValid(o))
+
+function multiFilter(arr) {
+    arr = arr.filter((item) => {
+        let capital = item.capital.length >= 8;
+        let name = !/^[aeiou]/i.test(item.name);
+        let tag = /[aeiou]/i.test(item.tag);
+        let region = item.region !== "South";
+        return capital && name && tag && region;
+    });
+    return arr;
 }
