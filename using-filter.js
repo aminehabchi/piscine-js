@@ -27,10 +27,13 @@ function duplicate(s){
     return true
 }
 function isValid(obj){
+    if (obj==null){
+        return false
+    }
     if (obj.capital.length<8){
         return false
     }
-    if (Vowels(obj.name[0])==false){
+    if (Vowels(obj.name[0])==false ){
         return false
     }
     let bl=false
@@ -75,4 +78,3 @@ function filter1DistinctVowel(arr){
 function multiFilter(arr){
     return arr.filter((o)=>isValid(o))
 }
-
