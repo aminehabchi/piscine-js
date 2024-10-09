@@ -1,3 +1,5 @@
 function forEach(arr,func){
-    return arr.forEach((a)=>func(a))
+    for (let i=0;i<arr.length;i++){
+        func(arr[i],i,arr)
+    }
 }
