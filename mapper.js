@@ -1,13 +1,13 @@
 function map(arr,func){
-    for (let i=0;i<arr.length;i++){
-        arr[i]=func(arr[i],i,arr)
+    if (arr==null){
+        return []
     }
-    return arr
+    let a=[]
+    for (let i=0;i<arr.length;i++){
+        a.push(func(arr[i]))
+    }
+    return a
 }
-
-function flatMap(arr, func) {
-    for (let i=0;i<arr.length;i++){
-        arr[i]=func(arr[i],i,arr)
-    }
-    return arr.flat();
+const flatMap = (arr,fn) => {
+    return [].concat(...map(arr,fn))
 }
