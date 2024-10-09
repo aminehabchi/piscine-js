@@ -5,10 +5,13 @@ function citiesOnly(ar) {
 function upperCasingStates(ar) {
     return ar.map((x) => capitalize(x))
 }
-function capitalize(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+function capitalize(s) {
+    s=s.split(" ")
+    for (let i=0;i<s.length;i++){
+        s[i]=s[i].charAt(0).toUpperCase() + s[i].slice(1);
+    }
+    return s.join(' ')
 }
-
 function fahrenheitToCelsius(ar) {
     return ar.map((x) => convert(x.slice(0, x.length - 2)) + "°C")
 }
