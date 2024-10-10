@@ -1,30 +1,26 @@
 
-export function getArchitects(people) {
+export function getArchitects() {
     
     const architects = Array.from(people.getElementsByTagName('a'));
 
     const allPeople = Array.from(people.getElementsByTagName('*')); 
 
-    const nonArchitects = allPeople.filter(person => person.tagName.toLowerCase() !== 'a');
+    const nonArchitects = allPeople.filter((person) => person.tagName.toLowerCase() !== 'a');
 
     return [architects, nonArchitects];
 }
 
 export function getClassical(){
-       
-    const classical = Array.from(document.getElementsByClassName('classical'));
-
-    const allPeople = Array.from(document.getElementsByClassName('*')); 
-
+    const allPeople = getArchitects()[0]
+    const classical = allPeople.filter(person => person.className.toLowerCase() === 'classical');
     const nonClassical = allPeople.filter(person => person.className.toLowerCase() !== 'classical');
 
     return [classical, nonClassical];
 }
 export function getActive(){
-      
-    const active = Array.from(document.getElementsByClassName('active'));
-
     const allPeople = Array.from(document.getElementsByClassName('*')); 
+
+    const active =  allPeople.filter(person => person.className.toLowerCase() === 'active');
 
     const nonActive = allPeople.filter(person => person.className.toLowerCase() !== 'active');
 
