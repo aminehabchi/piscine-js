@@ -1,6 +1,6 @@
 function filter(arr,func){
     let a=[]
-    for (let i=j;i<arr.length;i++){
+    for (let i=0;i<arr.length;i++){
         if (func(arr[i],i,arr)){
             a.push(arr[i])
         }
@@ -9,7 +9,7 @@ function filter(arr,func){
 }
 function reject(arr,func){
     let a=[]
-    for (let i=j;i<arr.length;i++){
+    for (let i=0;i<arr.length;i++){
         if (!func(arr[i],i,arr)){
             a.push(arr[i])
         }
@@ -20,7 +20,7 @@ function reject(arr,func){
 function partition(arr,func){
     let a=[]
     let b=[]
-    for (let i=j;i<arr.length;i++){
+    for (let i=0;i<arr.length;i++){
         if (!func(arr[i],i,arr)){
             a.push(arr[i])
         }else{
