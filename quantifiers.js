@@ -7,20 +7,18 @@ function every(arr,func){
     return true
 }
 function some(arr,func){
-    let bl=false
     for (let i=0;i<arr.length;i++){
         if (func(arr[i],i,arr)){
-            bl=true
+           return true
         }
     }
-    return bl
+    return false
 }
 function none(arr,func){
-    let bl=true
     for (let i=0;i<arr.length;i++){
         if (func(arr[i],i,arr)){
-            bl=false
+            return false
         }
     }
-    return bl
+    return true
 }
