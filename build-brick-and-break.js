@@ -2,11 +2,8 @@ export function build(n) {
     const newDiv = document.createElement('div');
     newDiv.setAttribute('id', 'brick-' + (i + 1));
     if ((i + 1) % 3 === 2 ){
-        newDiv.setAttribute("foundation", "true")
-    } else {
-        newDiv.setAttribute("foundation", null)
+        newDiv.setAttribute("foundation", true)
     }
-
     document.body.appendChild(newDiv);
     newDiv.innerHTML = i + 1
     n--
