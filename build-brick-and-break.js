@@ -2,7 +2,7 @@ export function build(n) {
     const newDiv = document.createElement('div');
     newDiv.setAttribute('id', 'brick-' + (i + 1));
     if ((i + 1) % 3 === 2 ){
-        newDiv.setAttribute("foundation", true)
+        newDiv.setAttribute("foundation", "true")
     }
     document.body.appendChild(newDiv);
     newDiv.innerHTML = i + 1
@@ -21,9 +21,9 @@ export function repair(...ids) {
         let a= brick.getAttribute("foundation")
   
         if (a=="true"){
-            brick.innerHTML=id.split('-')[1]+'-in progress'
+            brick.setAttribute("data-repaired", 'in progress')
         } else{
-            brick.innerHTML=id.split('-')[1]+'-repaired'
+            brick.setAttribute("data-repaired", "true")
         }
     });
 }
