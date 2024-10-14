@@ -1,7 +1,8 @@
 function invert(obj) {
     let newObj = {}
     for (const key in obj) {
-        newObj[key]=obj[key]
+        newObj[obj[key]]=key
     }
     return newObj
 }
+// console.log(invert({ language: 'english' }));
