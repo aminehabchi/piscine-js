@@ -1,30 +1,30 @@
-function pick(obj,...arr){
-    appear,_=getKey(obj,arr)
-    let o={}
-    for (let i=0;i<appear.length;i++){
-        o[appear[i]]=obj[appear[i]]
+function pick(obj, ...arr) {
+    let appear, _ = getKey(obj, arr)
+    let o = {}
+    for (let i = 0; i < appear.length; i++) {
+        o[appear[i]] = obj[appear[i]]
     }
     return o
 }
-function omit(obj,...arr){
-    _,notappear=getKey(obj,arr)
-    let o={}
-    for (let i=0;i<notappear.length;i++){
-        o[notappear[i]]=obj[notappear[i]]
+function omit(obj, ...arr) {
+    let _, notappear = getKey(obj, arr)
+    let o = {}
+    for (let i = 0; i < notappear.length; i++) {
+        o[notappear[i]] = obj[notappear[i]]
     }
     return o
 }
-function getKey(obj,...arr){
-    let appear=[]
-    let notappear=[]
-    let keys=Object.keys(obj)
-    
-    for (let i=0;i<keys.length;i++){
-        if (arr.includes(keys[i])){
+function getKey(obj, ...arr) {
+    let appear = []
+    let notappear = []
+    let keys = Object.keys(obj)
+
+    for (let i = 0; i < keys.length; i++) {
+        if (arr.includes(keys[i])) {
             appear.push(keys[i])
-        }else{
+        } else {
             notappear.push(keys[i])
         }
     }
-    return appear,notappear
+    return appear, notappear
 }
