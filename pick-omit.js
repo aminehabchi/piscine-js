@@ -1,4 +1,4 @@
-function pick(obj, ...arr) {
+function pick(obj, arr) {
     let { appear } = getKey(obj, arr);
     let o = {};
     for (let i = 0; i < appear.length; i++) {
@@ -7,7 +7,7 @@ function pick(obj, ...arr) {
     return o;
 }
 
-function omit(obj, ...arr) {
+function omit(obj, arr) {
     let { notappear } = getKey(obj, arr);
     let o = {};
     for (let i = 0; i < notappear.length; i++) {
