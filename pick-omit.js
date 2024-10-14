@@ -1,4 +1,8 @@
 function pick(obj, arr) {
+    if (typeof arr === 'string') {
+        arr = [arr]; 
+    }
+
     let { appear } = getKey(obj, arr);
     let o = {};
     for (let i = 0; i < appear.length; i++) {
@@ -8,6 +12,9 @@ function pick(obj, arr) {
 }
 
 function omit(obj, arr) {
+    if (typeof arr === 'string') {
+        arr = [arr]; 
+    }
     let { notappear } = getKey(obj, arr);
     let o = {};
     for (let i = 0; i < notappear.length; i++) {
@@ -17,6 +24,9 @@ function omit(obj, arr) {
 }
 
 function getKey(obj, arr) {
+    if (typeof arr === 'string') {
+        arr = [arr]; 
+    }
     let appear = [];
     let notappear = [];
     let keys = Object.keys(obj);
