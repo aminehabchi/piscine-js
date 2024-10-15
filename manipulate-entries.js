@@ -13,7 +13,12 @@ function mapEntries(nutrients, func) {
     Object.keys(nutrients).forEach(key => {
         obj[key] = func([key, nutrients[key]])
     });
-    return obj
+
+     let res = {};
+    for (let key in obj) {
+        res[obj[key][0]] = obj[key][1];
+    }
+    return res;
 }
 function reduceEntries(nutrients, func, acc) {
     const keys = Object.keys(nutrients);
