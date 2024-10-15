@@ -7,14 +7,17 @@ function filterEntries(nutrients, func) {
     });
     return obj
 }
-function filterEntries(nutrients, func) {
-    let obj = {}
-    Object.keys(nutrients).forEach(key => {
-        if (func([key,nutrients[key]])) {
-            obj[key]=nutrients[key] 
-        }
-    });
-    return obj
+
+function mapEntries(entries, mapper) {
+    let temp = {};
+    for (let key in entries) {
+        temp[key] = mapper([key, entries[key]]);
+    }
+    let res = {};
+    for (let key in temp) {
+        res[temp[key][0]] = temp[key][1];
+    }
+    return res;
 }
 
 
