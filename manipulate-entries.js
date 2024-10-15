@@ -48,7 +48,7 @@ function cartTotal(obj){
         let c=nutritionDB[keys[i]]
         const k = Object.keys(c);
         for (let j=0;j<k.length;j++){
-            c[k[j]]=Number(((obj[keys[i]]/100)*c[k[j]]).toFixed(1));
+            c[k[j]]=Number(((obj[keys[i]]/100)*c[k[j]]).toFixed(3));
         }        
         carts[keys[i]]=c
     }  
