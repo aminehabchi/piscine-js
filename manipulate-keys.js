@@ -1,7 +1,7 @@
 function filterKeys(nutrients, func) {
     let obj = {}
     Object.keys(nutrients).forEach(key => {
-        if (func( key)) {
+        if (func(key)) {
             obj[key] = nutrients[key]
         }
     });
@@ -10,13 +10,21 @@ function filterKeys(nutrients, func) {
 function mapKeys(nutrients, func) {
     let obj = {}
     Object.keys(nutrients).forEach(key => {
-        obj[key] = func( key)
+        let k = key;
+        obj[func(key)] = nutrients[key]
     });
     return obj
 }
-function reduceKeys(nutrients,func,acc=""){
-    Object.keys(nutrients).forEach(key => {
-        acc= func(acc,nutrients[key])
-    });
+function reduceKeys(nutrients, func, acc = "") {
+    const keys = Object.keys(nutrients);
+
+    if (acc == "") {
+        acc=keys[0]
+    }else{
+        acc = func(acc, keys[0])
+    }
+    for (let i = 1; i < keys.length; i++) {
+        acc = func(acc, keys[i])
+    }
     return acc
 }
