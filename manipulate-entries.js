@@ -8,13 +8,10 @@ function filterEntries(nutrients, func) {
     return obj
 }
 
-
-
-
 function mapEntries(nutrients, func) {
     let obj = {}
     Object.keys(nutrients).forEach(key => {
-        obj[key] = func(nutrients[key], [key, nutrients[key]])
+        obj[key] = func([key, nutrients[key]])
     });
     return obj
 }
