@@ -15,10 +15,9 @@ function mapKeys(nutrients, func) {
     });
     return obj
 }
-function reduceKeys(nutrients, func, acc = "") {
+function reduceKeys(nutrients, func, acc) {
     const keys = Object.keys(nutrients);
-
-    if (acc == "") {
+    if (typeof acc ==="undefined") {
         acc=keys[0]
     }else{
         acc = func(acc, keys[0])
