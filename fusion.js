@@ -18,7 +18,12 @@ function fusion(obj1, obj2) {
             fusioned[key] = obj1[key];
         }
     }
-   
+    for (var key in obj2) {
+        if (!obj2.hasOwnProperty(key)) continue;
+        if (!obj1.hasOwnProperty(key)) {
+            fusioned[key] = obj2[key];
+        }
+    }
     return fusioned;
 }
 
