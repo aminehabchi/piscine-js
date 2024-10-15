@@ -36,7 +36,7 @@ function totalCalories(obj){
     const keys = Object.keys(obj);
     let t=0
     for (let i=0;i<keys.length;i++){
-        t=t+(obj[keys[i]]/100)*nutritionDB[keys[i]].calories
+        t=t+Number(((obj[keys[i]]/100)*nutritionDB[keys[i]].calories).toFixed(1))
     }
     return t
 }
