@@ -1,7 +1,7 @@
 function filterEntries(nutrients, func) {
     let obj = {}
     Object.keys(nutrients).forEach(key => {
-        if (func([k,nutrients[key]])) {
+        if (func([key,nutrients[key]])) {
             obj[key]=nutrients[key] 
         }
     });
