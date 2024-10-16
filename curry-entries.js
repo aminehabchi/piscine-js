@@ -22,3 +22,35 @@ function reduceCurry(func) {
         return Object.entries(obj).reduce((a, [key, v]) => func(a, [key, v]), acc)
     }
 }
+function filterCurry(func) {
+    return function (obj) {
+        return Object.fromEntries(Object.entries(obj).filter(([k, v]) => func([k, v])))
+    }
+}
+function reduceScore(obj,total=0) {
+    const newobj = filterCurry(([_, v]) => (Object.entries(filterCurry(([_, w]) => w === true)(v))).length != 0)(obj)
+    Object.entries(newobj).forEach(([_, v]) => {total+=reduceCurry((a, [n, w]) => {
+        if (n === 'shootingScore' || n === 'pilotingScore') {
+           a+=w
+        }
+        return a
+    })(v, 0)})
+    return total
+}
+function filterForce(obj) {
+   return filterCurry(([k, v]) => (Object.entries(filterCurry(([n, w]) => w === true && obj[k].shootingScore >=80)(v))).length != 0)(obj)
+}
+function mapAverage(obj) {
+    return mapCurry(([k,v])=>{
+        let total = 0
+        total =reduceCurry((a, [n, w]) => {
+            if (n === 'shootingScore' || n === 'pilotingScore') {
+               a+=w
+            }
+            return a
+        })(v, 0)
+        const averageScore = "averageScore"
+        v[averageScore]= total/2
+        return [k,v]
+    })(obj)
+}
