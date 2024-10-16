@@ -1,4 +1,7 @@
 function deepCopy(obj,copy=[]){
+    if (obj instanceof RegExp){
+        return copy.push(new RegExp(obj))
+    }
     if (Array.isArray(obj)){
         for (let i=0;i<obj.length;i++){
             if (typeof obj[i]=="object"){
