@@ -1,16 +1,18 @@
-function pronoun(str){
+function pronoun(s){
+    let str=maniplst(s)
     let w=str.split(' ')
+    w=w.filter((x)=> x!='')
     let obj={}
     let pronoun=""
     for (let i=0;i<w.length;i++){
-        
+
         if (check(w[i])){
             if (obj.hasOwnProperty(w[i])){
                 obj[w[i]].count++
             }else{
                 obj[w[i].toLowerCase()]={word:[],count:1}
             }
-            pronoun=w[i]
+            pronoun=w[i].toLowerCase()
         }
         if (pronoun!="" && !check(w[i])){
             obj[pronoun].word.push(w[i])
@@ -28,4 +30,29 @@ function check(word){
         }
     }
     return false
+}
+
+function maniplst(st){
+    let str = ""
+    const stand = /[ a-zA-Z0-9]/
+    for (let i = 0 ; i< st.length; i++){
+        if (!stand.test(st[i])){
+            if (i!=0)
+            str += " "
+            continue
+        }
+        str+=String(st[i])
+    }
+    let a=str.split(' ')
+    str=""
+    for (let i = 0 ; i< a.length; i++){
+        if (a!=""){
+            str+=a[i]
+            if (i!=a.length-1){
+                str+=' '
+            }
+        }
+    }
+
+    return str
 }
