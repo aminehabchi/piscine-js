@@ -7,8 +7,8 @@ function pronoun(s){
     for (let i=0;i<w.length;i++){
 
         if (check(w[i])){
-            if (obj.hasOwnProperty(w[i])){
-                obj[w[i]].count++
+            if (obj.hasOwnProperty(w[i].toLowerCase())){
+                obj[w[i].toLowerCase()].count++
             }else{
                 obj[w[i].toLowerCase()]={word:[],count:1}
             }
