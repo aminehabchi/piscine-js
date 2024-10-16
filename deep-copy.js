@@ -1,16 +1,16 @@
-function deepCopy(obj,copy={}){
+function deepCopy(obj,copy=[]){
     if (Array.isArray(obj)){
-        if (copy.length==0){
-            copy=[]
-        }
         for (let i=0;i<obj.length;i++){
             if (typeof obj[i]=="object"){
                 copy=deepCopy(obj[i],copy)
             }else{
-                copy.push(obj[i])
+                copy[copy.length]=obj[i]
             }
         }
         return copy
+    }
+    if (Array.isArray(copy)){
+        copy={}
     }
     let keys=Object.keys(obj)
     for (let i=0;i<keys.length;i++){
