@@ -1,6 +1,8 @@
 function deepCopy(obj,copy=[]){
+  
     if (obj instanceof RegExp){
-        return copy.push(new RegExp(obj))
+        copy[copy.length]=obj
+        return copy
     }
     if (Array.isArray(obj)){
         for (let i=0;i<obj.length;i++){
@@ -24,4 +26,7 @@ function deepCopy(obj,copy=[]){
         }
     }
     return copy
+
 }
+
+// console.log(deepCopy([console.log, /hello/]));
