@@ -15,7 +15,7 @@ function fusion(obj1, obj2) {
             } else if (is.arr(obj1[key]) && is.arr(obj2[key])) {
                 fusioned[key] = obj1[key].concat(obj2[key]);
             } else if (is.num(obj1[key]) && is.num(obj2[key])) {
-                fusioned[key] = obj1[key] + obj2[key];
+                fusioned[key] = obj2[key];
             } else if (is.str(obj1[key]) && is.str(obj2[key])) {
                 fusioned[key] = obj1[key] + " " + obj2[key];
             } else {
