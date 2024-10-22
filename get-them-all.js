@@ -1,26 +1,26 @@
-export const getArchitects = () => {
 
-   const architects = Array.from(document.getElementsByTagName('a'));
-    const nonArchitects = Array.from(document.getElementsByTagName('span')); 
-   return [architects, nonArchitects];
+export function getArchitects() {
+    let a = Array.from(document.getElementsByTagName('a'))
+    let b = Array.from(document.getElementsByTagName('span'))
+    return [a, b]
 }
 
-export const getClassical = () => {
-    const classical=getArchitects()[0]
-    const nonclassical=classical.filter((person) => person.tagName.toLowerCase() !== 'classical');
-    return [ classical, nonclassical ];
+export function getClassical() {
+    let people = getArchitects()[0]
+    let a = people.filter((x) => x.tagName.toLowerCase() == 'classical')
+    let b = people.filter((x) => x.tagName.toLowerCase() !== 'classical')
+    return [a, b]
 }
 
-export const getActive = () => {
-    return [
-        document.querySelectorAll("a.classical.active"),
-        document.querySelectorAll("a.classical:not(.active)"),
-    ];
+export function getActive() {
+    let people = getClassical()[0]
+    let a = people.filter((x) => x.active)
+    let b = people.filter((x) => !x.active)
+    return [a, b]
 }
 
-export const getBonannoPisano = () => {
-    return [
-        document.getElementById("BonannoPisano"),
-        getActive()[0],
-    ];
+export function getBonannoPisano() {
+    let i = document.getElementById('BonannoPisano')
+    let people = getClassical()[0].filter((x) => x.active)
+    return [i, people]
 }
