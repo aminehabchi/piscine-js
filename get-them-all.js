@@ -21,6 +21,6 @@ export function getActive() {
 
 export function getBonannoPisano() {
     let i = document.getElementById('BonannoPisano')
-    let people = getClassical()[0].filter((x) => x.active)
+    let people = getClassical()[0].filter((x) => x.classList.contains('active'))
     return [i, people]
 }
