@@ -7,15 +7,15 @@ export function getArchitects() {
 
 export function getClassical() {
     let people = getArchitects()[0]
-    let a = people.filter((x) => x.tagName.toLowerCase() == 'classical')
-    let b = people.filter((x) => x.tagName.toLowerCase() !== 'classical')
+    let a = people.filter((x) => x.classList.contains('classical'))
+    let b = people.filter((x) => !x.classList.contains('classical'))
     return [a, b]
 }
 
 export function getActive() {
     let people = getClassical()[0]
-    let a = people.filter((x) => x.active)
-    let b = people.filter((x) => !x.active)
+    let a = people.filter((x) => x.classList.contains('active'))
+    let b = people.filter((x) => !x.classList.contains('active'))
     return [a, b]
 }
 
