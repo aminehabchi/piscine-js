@@ -16,7 +16,7 @@ if (args && args.length > 0) {
                 if (l % 2 == 0) {
                     arr[i] = (arr[i].slice(half, l) + arr[i].slice(0, half));
                 } else {
-                    arr[i] = (arr[i].slice(half + 1, l) + arr[i].slice(0, half + 1));
+                    arr[i] = (arr[i].slice(half , l) + arr[i].slice(0, half ));
                 }
             }
             console.log(arr.join(" "));
