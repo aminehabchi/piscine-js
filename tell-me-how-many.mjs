@@ -5,7 +5,7 @@ const args = process.argv.slice(2);
 let path = "."
 
 if (args && args.length > 0) {
-    path = args[i]
+    path = args[0]
 }
 
 fs.readdir(path, (err, files) => {
